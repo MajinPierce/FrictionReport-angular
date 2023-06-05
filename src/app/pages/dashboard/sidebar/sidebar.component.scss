@@ -1,0 +1,21 @@
+* {
+  color: #FFF;
+}
+
+mat-drawer{
+  width: 15vw;
+}
+
+.sidenav__container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1e1e1e;
+}
+
+.sidenav__title{
+  display: flex;
+  justify-content: center;
+}
