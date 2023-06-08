@@ -1,18 +1,22 @@
 <mat-drawer-container class="sidenav__container">
-  <mat-drawer mode="side" opened>
+  <mat-drawer mode="side" opened="true">
     <div class="sidenav__title">
       <h2>Friction Report</h2>
     </div>
     <mat-accordion multi>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
+      <mat-expansion-panel class="sidenav__panel">
+        <mat-expansion-panel-header class="sidenav__header">
           <mat-panel-title>
             Tennessee
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <div *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <p *ngIf="area.state==='TN'">{{area.name}}</p>
-        </div>
+        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
+          <a href="#" class="sidenav__link">
+            <div class="sidenav__subpanel" *ngIf="area.state==='TN'">
+              <p>- {{area.name}}</p>
+            </div>
+          </a>
+        </ng-container>
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -20,9 +24,13 @@
             Alabama
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <div *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <p *ngIf="area.state==='AL'">{{area.name}}</p>
-        </div>
+        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
+          <a href="#" class="sidenav__link">
+            <div class="sidenav__subpanel" *ngIf="area.state==='AL'">
+              <p>- {{area.name}}</p>
+            </div>
+          </a>
+        </ng-container>
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -30,9 +38,27 @@
             Georgia
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <div *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <p *ngIf="area.state==='GA'">{{area.name}}</p>
-        </div>
+        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
+          <a href="#" class="sidenav__link">
+            <div class="sidenav__subpanel" *ngIf="area.state==='GA'">
+              <p>- {{area.name}}</p>
+            </div>
+          </a>
+        </ng-container>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Kentucky
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
+          <a href="#" class="sidenav__link">
+            <div class="sidenav__subpanel" *ngIf="area.state==='KY'">
+              <p>- {{area.name}}</p>
+            </div>
+          </a>
+        </ng-container>
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -40,9 +66,13 @@
             North Carolina
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <div *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <p *ngIf="area.state==='NC'">{{area.name}}</p>
-        </div>
+        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
+          <a href="#" class="sidenav__link">
+            <div class="sidenav__subpanel" *ngIf="area.state==='NC'">
+              <p>- {{area.name}}</p>
+            </div>
+          </a>
+        </ng-container>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-drawer>

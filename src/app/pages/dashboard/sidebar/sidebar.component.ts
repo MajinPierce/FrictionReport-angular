@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit{
 
   ngOnInit(): void {
     this.climbingAreaService.areasSubject$.subscribe(data =>{
-      this.climbingAreas = data;
+      this.climbingAreas = data.sort((a,b) => a.name.localeCompare(b.name));
     })
   }
 

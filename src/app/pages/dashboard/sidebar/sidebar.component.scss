@@ -2,20 +2,47 @@
   color: #FFF;
 }
 
+mat-drawer-container {
+ flex: 1 1 auto;
+}
+
 mat-drawer{
   width: 15vw;
 }
 
 .sidenav__container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: #1e1e1e;
+  height: 100%;
 }
 
-.sidenav__title{
+.sidenav__title {
+  margin: 1rem;
   display: flex;
   justify-content: center;
+}
+
+.sidenav__panel {
+
+}
+
+.sidenav__header {
+
+}
+
+.sidenav__subpanel {
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  &:hover{
+    border: 1px solid #FFF;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.sidenav__link{
+  text-decoration: none;
 }
