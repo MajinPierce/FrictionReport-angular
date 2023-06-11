@@ -1,6 +1,6 @@
 # FrictionReport
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1. It also uses node 18.16.0 LTS.
 
 ## Development server
 

@@ -1,6 +1,6 @@
 <div class="dashboard">
-  <friction-sidebar/>
-  <div class="dashboard__content">
-    <p>{{weather.mountainProjectUrl}}</p>
+  <div  *ngIf="area">
+    <p>The temperature at {{area.areaName}} is currently {{area.current.temp}}</p>
+    <p>{{area.mountainProjectUrl}}</p>
   </div>
 </div>

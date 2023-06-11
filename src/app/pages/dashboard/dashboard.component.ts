@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ApiService } from 'src/app/services/api.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { AreaData } from 'src/app/models/area-data.model';
+import { DashboardService } from 'src/app/services/dashboard.service';
 
 @Component({
   selector: 'friction-dashboard',
@@ -9,19 +11,26 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class DashboardComponent implements OnInit{
 
-  weather: any;
-  weatherSubscription$: Observable<any> = new Observable();
+  area!: AreaData;
+  test: string = "empty";
 
-  constructor(private apiService: ApiService){}
+  constructor(
+    private dashboardService: DashboardService,
+    private route: ActivatedRoute
+  ){}
 
   ngOnInit(){
-    this.apiService.getAreaWeather('Leda').subscribe((data: any) => {
-      console.log(data);
-      this.weather = data;
+    this.route.params.subscribe((params: Params) => {
+      this.getArea(params['area']);
+    });
+    this.dashboardService.areaData.subscribe((data: AreaData | null) => {
+      if(data){
+        this.area = data;
+      }
     });
   }
 
-  getData(){
-
+  getArea(areaName: string){
+    this.dashboardService.getAreaData(areaName);
   }
 }

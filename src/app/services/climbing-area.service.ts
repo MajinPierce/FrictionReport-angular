@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ClimbingAreaService implements OnInit{
+export class ClimbingAreaService{
   public climbingAreas: ClimbingArea[] = [];
   public areasSubject$ = new BehaviorSubject(this.climbingAreas);
 
@@ -14,10 +14,8 @@ export class ClimbingAreaService implements OnInit{
     climbingAreasConfig.map(
       area => this.climbingAreas.push(area as ClimbingArea)
     );
-    console.log(this.climbingAreas);
+    this.areasSubject$.next(this.climbingAreas);
   }
-
-  ngOnInit(){}
 
 }
 

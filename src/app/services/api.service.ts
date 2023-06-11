@@ -16,7 +16,7 @@ export class ApiService {
     })
   };
 
-  getAreaWeather(areaName: string): Observable<any>{
+  getAreaData(areaName: string): Observable<any>{
     return this.http.get(this.apiUrl + areaName)
     .pipe(retry(1), catchError(this.handleError));
   }
