@@ -8,41 +8,59 @@
   flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
-  color: $text-color-main;
+  color: $color-text-light;
 
   &__title {
     display: flex;
     width: 90%;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     padding-bottom: 3rem;
     height: fit-content;
 
-    &-link {
+    &_link {
       display: flex;
       justify-content: baseline;
       color: $accent-color;
       margin: 0;
     }
 
-    &-text {
+    &_text {
       padding-right: 1rem;
       margin: 0;
       font-size: 4rem;
     }
   }
 
-  &__sendex-values {
-    padding: 2rem 0;
-    display: flex;
-    background: $background-color-accent;
-    border-radius: 16px;
-    width: 90%;
-    justify-content: space-evenly;
 
-    friction-sendex-value {
-      width: 30%;
+  &__sendex{
+    width: 90%;
+    background: $color-bg-med;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+
+    &_title {
+      padding-left: 2.4%;
+      padding-top: 1rem;
+
+      h2 {
+        font-size: 3rem;
+        margin: 0;
+      }
     }
+
+    &_values {
+      padding: 2rem 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+
+      friction-sendex-value {
+        width: 30%;
+      }
+    }
+
   }
 
   &__graphs {

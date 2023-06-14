@@ -1,9 +1,5 @@
 @import "../../scss/variables";
 
-* {
-  color: $text-color-main;
-}
-
 mat-drawer-container {
  flex: 1 1 auto;
 }
@@ -15,6 +11,10 @@ mat-drawer{
 .sidenav {
   height: 100%;
 
+  &__content {
+    background-color: $color-bg-darker;
+  }
+
   &__title{
     margin: 1rem;
     display: flex;
@@ -23,10 +23,14 @@ mat-drawer{
 
 
   &__panel {
+    background-color: $color-bg-darker;
 
+    * {
+      color: $color-text-light;
+    }
   }
 
-  &__header {
+  &__header{
 
   }
 
@@ -40,7 +44,7 @@ mat-drawer{
     border-radius: 10px;
 
     &:hover{
-      border: 1px solid $text-color-main;
+      border: 1px solid $color-text-lighter;
     }
 
     p {
@@ -51,7 +55,7 @@ mat-drawer{
   .active {
 
     .sidenav__subpanel{
-      background: $background-color;
+      background: $color-bg-med;
     }
   }
 }

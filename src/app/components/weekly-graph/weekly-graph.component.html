@@ -1,1 +1,20 @@
-<p>weekly-graph works!</p>
+<div class="chart">
+  <div class="chart__title">
+    <h2>Weekly Conditions</h2>
+  </div>
+  <div class="chart__content dark">
+    <ngx-charts-line-chart
+    [results]="weeklyValues"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [autoScale]="autoScale"
+    [yScaleMin]="yScaleMin"
+    [yScaleMax]="yScaleMax"
+    [showGridLines]="showGridLines"
+    />
+  </div>
+</div>

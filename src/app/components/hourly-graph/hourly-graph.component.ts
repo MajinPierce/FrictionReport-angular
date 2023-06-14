@@ -41,13 +41,12 @@ export class HourlyGraphComponent implements OnInit {
     this.dashboardService.areaData.subscribe((data: AreaData | null) => {
       if(data){
         this.area = data;
-
         this.setHourlySendexValues();
       }
     });
   }
 
-  setHourlySendexValues(){
+  setHourlySendexValues(): void {
     this.hourlySendexValues = this.reset.slice();
     this.hourlySendexValues[0].series.length = 0;
       let i = 0;

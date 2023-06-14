@@ -1,10 +1,10 @@
 @import "../../scss/_variables";
 
 .sendex-value {
-  color: $text-color-main;
+  color: $color-text-light;
   display: flex;
   padding: .5rem 1rem;
-  background: $background-color;
+  background: $color-bg-darker;
   border-radius: 8px;
   align-items: center;
   flex: 1 1 auto;
