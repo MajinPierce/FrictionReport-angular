@@ -1,5 +1,7 @@
+@import "../../scss/variables";
+
 * {
-  color: #FFF;
+  color: $text-color-main;
 }
 
 mat-drawer-container {
@@ -10,46 +12,46 @@ mat-drawer{
   width: 15vw;
 }
 
-.sidenav__container {
-  background: #1e1e1e;
+.sidenav {
   height: 100%;
-}
 
-.sidenav__title {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.sidenav__panel {
-
-}
-
-.sidenav__header {
-
-}
-
-.sidenav__subpanel {
-  padding: 1rem;
-  border: 1px solid transparent;
-  border-radius: 10px;
-
-  &:hover{
-    border: 1px solid #FFF;
+  &__title{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
   }
 
-  p {
-    margin: 0;
+
+  &__panel {
+
   }
-}
 
-.sidenav__link{
-  text-decoration: none;
-}
+  &__header {
 
-.active {
+  }
 
-  .sidenav__subpanel{
-    background: #1e1e1e;
+  &__link {
+    text-decoration: none;
+  }
+
+  &__subpanel {
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    &:hover{
+      border: 1px solid $text-color-main;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .active {
+
+    .sidenav__subpanel{
+      background: $background-color;
+    }
   }
 }

@@ -1,0 +1,24 @@
+@import "../../scss/_variables";
+
+.sendex-value {
+  color: $text-color-main;
+  display: flex;
+  padding: .5rem 1rem;
+  background: $background-color;
+  border-radius: 8px;
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: center;
+
+  &__title {
+    padding: 1rem;
+    margin: 0;
+    font-size: 3.5rem;
+  }
+
+  &__value {
+    padding: 1rem;
+    margin: 0;
+    font-size: 3rem;
+  }
+}

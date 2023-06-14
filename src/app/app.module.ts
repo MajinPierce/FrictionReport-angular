@@ -1,25 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { MapComponent } from './pages/map/map.component';
+import { SendexValueComponent } from './components/sendex-value/sendex-value.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapComponent } from './pages/map/map.component';
+import { WeeklyGraphComponent } from './components/weekly-graph/weekly-graph.component';
+import { HourlyGraphComponent } from './components/hourly-graph/hourly-graph.component';
+import { WeeklyForecastComponent } from './components/weekly-forecast/weekly-forecast.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     DashboardComponent,
     MapComponent,
-    SidebarComponent
+    SidebarComponent,
+    SendexValueComponent,
+    WeeklyGraphComponent,
+    HourlyGraphComponent,
+    WeeklyForecastComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +37,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
