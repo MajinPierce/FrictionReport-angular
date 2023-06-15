@@ -6,6 +6,8 @@ mat-drawer-container {
 
 mat-drawer{
   width: 15vw;
+  min-width: 200px;
+  height: 100%;
 }
 
 .sidenav {

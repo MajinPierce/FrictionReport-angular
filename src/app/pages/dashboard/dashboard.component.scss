@@ -7,6 +7,7 @@
   padding: 2rem;
   flex: 1 1 auto;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   color: $color-text-light;
 
@@ -59,13 +60,24 @@
       friction-sendex-value {
         width: 30%;
       }
+
+      @media (max-width: 1180px){
+        flex-direction: column;
+        align-items: center;
+
+        friction-sendex-value {
+          padding: 2rem 0;
+          width: 90%;
+        }
+      }
+
+
     }
 
   }
 
   &__graphs {
     display: flex;
-    flex-wrap: wrap;
     width: 90%;
     justify-content: space-between;
     padding: 2rem 0;
@@ -76,6 +88,20 @@
 
     friction-weekly-graph {
       width: 49%;
+    }
+
+    @media (max-width: 1180px){
+      flex-direction: column;
+      align-items: center;
+
+      friction-hourly-graph {
+        width: 100%;
+        padding-bottom: 2rem;
+      }
+
+      friction-weekly-graph {
+        width: 100%;
+      }
     }
   }
 

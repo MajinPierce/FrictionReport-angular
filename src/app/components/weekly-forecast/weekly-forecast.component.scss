@@ -10,6 +10,9 @@
   &__title{
     padding: 1rem;
     padding-bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 
     h2{
       margin: 0;
@@ -30,6 +33,10 @@
     padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1180px){
+      flex-direction: column;
+    }
   }
 
   &__day {
@@ -39,6 +46,17 @@
     border-right: 2px solid $color-text-dark;
     flex: 1 1 auto;
     margin: 2rem 0;
+
+    @media (max-width: 1180px){
+      flex-direction: row;
+      border-right: none;
+      border-bottom: 2px solid $color-text-dark;
+      justify-content: space-between;
+
+      hr {
+        display: none;
+      }
+    }
 
     &:last-child {
       border-right: none;
