@@ -10,6 +10,7 @@ import { ClimbingAreaService } from 'src/app/services/climbing-area.service';
 })
 export class SidebarComponent implements OnInit{
 
+  opened: boolean = true;
   climbingAreas: ClimbingArea[] = [];
 
   constructor(public climbingAreaService: ClimbingAreaService){}

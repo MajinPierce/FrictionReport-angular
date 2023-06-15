@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import * as shape from 'd3-shape';
 
 import { AreaData } from 'src/app/models/area-data.model';
 import { ngxDataFormat } from 'src/app/models/ngx-data-format.model';
@@ -32,6 +33,7 @@ export class HourlyGraphComponent implements OnInit {
   yScaleMin: number = 20;
   yScaleMax: number = 180;
   showGridLines: boolean = false;
+  curve = shape.curveCatmullRom;
 
   constructor(private dashboardService: DashboardService){
     this.hourlySendexValues = this.reset.slice();

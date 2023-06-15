@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AreaData } from 'src/app/models/area-data.model';
 import { ngxDataFormat } from 'src/app/models/ngx-data-format.model';
 import { DashboardService } from 'src/app/services/dashboard.service';
+import * as shape from 'd3-shape';
+import { LegendPosition } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'friction-weekly-graph',
@@ -22,23 +24,23 @@ export class WeeklyGraphComponent implements OnInit {
   weeklyValues: Array<ngxDataFormat>;
   reset: Array<ngxDataFormat> = [
     {
-      name: "Min Temperature",
+      name: "Min Temperature (°F)",
       series: []
     },
     {
-      name: "Max Temperature",
+      name: "Max Temperature (°F)",
       series: []
     },
     {
-      name: "Humidity",
+      name: "Humidity (%)",
       series: []
     },
     {
-      name: "Dew Point",
+      name: "Dew Point (°F)",
       series: []
     },
     {
-      name: "Probability of Percipitation",
+      name: "Precipitation Chance (%)",
       series: []
     },
     {
@@ -54,11 +56,16 @@ export class WeeklyGraphComponent implements OnInit {
   showYAxisLabel: boolean = true;
   xAxisLabel: string = "Time";
   yAxisLabel: string = "Values"; //inactive
-  legend: boolean = true;
+  //need to hide legend under certain width
+  //need to max legend labels full width
+  legend: boolean = false;
   autoScale: boolean = false;
   yScaleMin: number = 0;
   yScaleMax: number = 180;
   showGridLines: boolean = false;
+  curve = shape.curveCatmullRom;
+  legendPosition: LegendPosition = LegendPosition.Right;
+
 
   constructor(private dashboardService: DashboardService){
     this.weeklyValues = this.reset.slice();

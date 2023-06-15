@@ -6,7 +6,7 @@ import { Observable, catchError, retry, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  apiUrl: string = "http://localhost:8080/api/";
+  apiUrl: string = "http://192.168.50.143:8080/api/";
 
   constructor(private http: HttpClient) {}
 
