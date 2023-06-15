@@ -41,9 +41,15 @@
     flex-direction: column;
     border-radius: 16px;
 
+
     &_title {
       padding-left: 2.4%;
       padding-top: 1rem;
+
+      @media (max-width: 1180px){
+        display: flex;
+        justify-content: center;
+      }
 
       h2 {
         font-size: 3rem;
@@ -56,6 +62,10 @@
       display: flex;
       width: 100%;
       justify-content: space-evenly;
+
+      @media (max-width: 1180px){
+        padding-top: 0;
+      }
 
       friction-sendex-value {
         width: 30%;
