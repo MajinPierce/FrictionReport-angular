@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { IconPipe } from './pipes/icon.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     SendexValueComponent,
     WeeklyGraphComponent,
     HourlyGraphComponent,
-    WeeklyForecastComponent
+    WeeklyForecastComponent,
+    IconPipe
   ],
   imports: [
     BrowserModule,
