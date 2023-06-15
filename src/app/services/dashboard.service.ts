@@ -11,17 +11,21 @@ export class DashboardService {
 
   areaData = new BehaviorSubject<AreaData | null>(null);
 
-  constructor(private apiService: ApiService) { 
-    this.apiService.getAreaData('Leda').subscribe((data: AreaData) => {
-      this.areaData.next(data);
-      console.log(this.areaData.getValue());
-    });
-  }
+  constructor(private apiService: ApiService) {}
 
   getAreaData(areaName: string){
     this.apiService.getAreaData(areaName).subscribe((data: AreaData) => {
       this.areaData.next(data);
-      console.log(this.areaData.getValue());
     });
+  }
+
+  calculateDailySendex(day: any): number {
+    let sendex = Math.round(2 * day.dew_point + day.humidity - day.temp.min);
+    return sendex;
+  }
+
+  calculateHourlySendex(hour: any): number {
+    let sendex = Math.round(2 * hour.dew_point + hour.humidity - hour.temp);
+    return sendex;
   }
 }

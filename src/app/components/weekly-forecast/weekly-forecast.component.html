@@ -1,0 +1,17 @@
+<div class="forecast">
+  <div class="forecast__title">
+    <h2>Weekly Forecast</h2>
+  </div>
+  <div class="forecast__hr"><hr></div>
+  <div class="forecast__content">
+    <ng-container *ngFor="let day of area.daily">
+      <div class="forecast__day">
+        <p class="forecast__day_item">{{day.dt*1000 | date:'ccc'}}</p>
+        <p class="forecast__day_item">{{day.weather[0].icon}}</p>
+        <p class="forecast__day_item">{{day.temp.min | number: '1.0-0'}}&#730;</p>
+        <hr class="forecast__day_item">
+        <p class="forecast__day_item">{{day.temp.max | number: '1.0-0'}}&#730;</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

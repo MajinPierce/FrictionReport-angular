@@ -88,6 +88,18 @@ export interface AreaData {
             wind_deg: number,
             wind_gust: number,
             clouds: number
+            temp: {
+              min: number,
+              max: number
+            },
+            weather: [
+              {
+                  main: string,
+                  description: string,
+                  icon: string
+              }
+          ],
+            pop: number
         }
     ]
 

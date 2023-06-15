@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { AreaData } from 'src/app/models/area-data.model';
 import { DashboardService } from 'src/app/services/dashboard.service';
 
@@ -33,4 +32,5 @@ export class DashboardComponent implements OnInit{
   getArea(areaName: string){
     this.dashboardService.getAreaData(areaName);
   }
+
 }

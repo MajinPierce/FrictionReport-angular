@@ -1,6 +1,4 @@
-* {
-  color: #FFF;
-}
+@import "../../scss/variables";
 
 mat-drawer-container {
  flex: 1 1 auto;
@@ -10,46 +8,54 @@ mat-drawer{
   width: 15vw;
 }
 
-.sidenav__container {
-  background: #1e1e1e;
+.sidenav {
   height: 100%;
-}
 
-.sidenav__title {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.sidenav__panel {
-
-}
-
-.sidenav__header {
-
-}
-
-.sidenav__subpanel {
-  padding: 1rem;
-  border: 1px solid transparent;
-  border-radius: 10px;
-
-  &:hover{
-    border: 1px solid #FFF;
+  &__content {
+    background-color: $color-bg-darker;
   }
 
-  p {
-    margin: 0;
+  &__title{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
   }
-}
 
-.sidenav__link{
-  text-decoration: none;
-}
 
-.active {
+  &__panel {
+    background-color: $color-bg-darker;
 
-  .sidenav__subpanel{
-    background: #1e1e1e;
+    * {
+      color: $color-text-light;
+    }
+  }
+
+  &__header{
+
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__subpanel {
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    &:hover{
+      border: 1px solid $color-text-lighter;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .active {
+
+    .sidenav__subpanel{
+      background: $color-bg-med;
+    }
   }
 }

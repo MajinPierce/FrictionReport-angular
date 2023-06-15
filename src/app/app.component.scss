@@ -1,5 +1,12 @@
+@import "scss/_variables";
+
 .main {
   font-size: 1.6rem;
   height: 100%;
   display: flex;
+  background-color: $color-bg-darkest;
+
+  &__content {
+    flex: 1 1 auto;
+  }
 }
