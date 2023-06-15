@@ -20,4 +20,5 @@ export class WeeklyForecastComponent {
       }
     });
   }
+
 }

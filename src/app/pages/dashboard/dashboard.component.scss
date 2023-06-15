@@ -21,7 +21,7 @@
     &_link {
       display: flex;
       justify-content: baseline;
-      color: $accent-color;
+      color: $color-accent-light;
       margin: 0;
     }
 
@@ -65,9 +65,22 @@
 
   &__graphs {
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 2rem 0;
+
+    friction-hourly-graph {
+      width: 49%;
+    }
+
+    friction-weekly-graph {
+      width: 49%;
+    }
+  }
+
+  &__forecast {
+    width: 90%;
   }
 
 }

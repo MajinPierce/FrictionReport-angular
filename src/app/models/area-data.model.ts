@@ -92,6 +92,13 @@ export interface AreaData {
               min: number,
               max: number
             },
+            weather: [
+              {
+                  main: string,
+                  description: string,
+                  icon: string
+              }
+          ],
             pop: number
         }
     ]

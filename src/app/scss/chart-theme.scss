@@ -97,28 +97,29 @@
 
   .chart-legend {
     .legend-labels {
-      background: rgba(255, 255, 255, 0.05) !important;
+      background: $color-bg-med !important;
     }
 
     .legend-item {
       &:hover {
-        color: #fff;
+        color: $color-text-lighter;
       }
     }
 
     .legend-label {
       &:hover {
-        color: #fff !important;
+        color: $color-text-lighter !important;
       }
 
       .active {
         .legend-label-text {
-          color: #fff !important;
+          color: $color-text-lighter !important;
         }
       }
     }
 
     .scale-legend-label {
+      width: 100%;
       color: $color-text-med;
     }
   }

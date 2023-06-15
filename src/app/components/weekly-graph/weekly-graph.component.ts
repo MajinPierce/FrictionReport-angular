@@ -53,7 +53,8 @@ export class WeeklyGraphComponent implements OnInit {
   showXAxisLabel: boolean = true;
   showYAxisLabel: boolean = true;
   xAxisLabel: string = "Time";
-  yAxisLabel: string = "Values";
+  yAxisLabel: string = "Values"; //inactive
+  legend: boolean = true;
   autoScale: boolean = false;
   yScaleMin: number = 0;
   yScaleMax: number = 180;

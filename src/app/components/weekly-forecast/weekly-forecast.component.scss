@@ -1,0 +1,57 @@
+@import "../../scss/_variables";
+
+.forecast {
+  background-color: $color-bg-med;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__title{
+    padding: 1rem;
+    padding-bottom: 0;
+
+    h2{
+      margin: 0;
+    }
+  }
+
+  &__hr {
+    display: flex;
+    justify-content: center;
+
+    hr {
+      width: 95%;
+      border: 1px solid $color-text-dark;
+    }
+  }
+
+  &__content {
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid $color-text-dark;
+    flex: 1 1 auto;
+    margin: 2rem 0;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &_item {
+      margin: 0;
+      padding: 1rem;
+    }
+
+    hr {
+      width: 30%;
+      padding: 0;
+    }
+  }
+}
