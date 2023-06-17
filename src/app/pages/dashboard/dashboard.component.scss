@@ -16,7 +16,8 @@
     width: 90%;
     align-items: center;
     justify-content: flex-start;
-    padding-bottom: 3rem;
+    padding-bottom: max(4vh, 2rem);
+
     height: fit-content;
 
     &_link {
