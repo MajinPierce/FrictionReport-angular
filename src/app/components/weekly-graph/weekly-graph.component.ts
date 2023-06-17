@@ -63,7 +63,7 @@ export class WeeklyGraphComponent implements OnInit {
   yScaleMin: number = 0;
   yScaleMax: number = 180;
   showGridLines: boolean = false;
-  curve = shape.curveCatmullRom;
+  curve = shape.curveCatmullRom.alpha(1);
   legendPosition: LegendPosition = LegendPosition.Right;
 
 
@@ -91,11 +91,11 @@ export class WeeklyGraphComponent implements OnInit {
         let date = new Date(day.dt * 1000).toLocaleDateString('en-US', {month: "numeric", day: "numeric"});
         this.weeklyValues[this.minTempIndex].series.push({
           "name": date,
-          "value": day.temp.min
+          "value": day.temperature.min
         });
         this.weeklyValues[this.maxTempIndex].series.push({
           "name": date,
-          "value": day.temp.max
+          "value": day.temperature.max
         });
         this.weeklyValues[this.humidityIndex].series.push({
           "name": date,
@@ -103,7 +103,7 @@ export class WeeklyGraphComponent implements OnInit {
         });
         this.weeklyValues[this.dewPointIndex].series.push({
           "name": date,
-          "value": day.dew_point
+          "value": day.dewPoint
         });
         this.weeklyValues[this.popIndex].series.push({
           "name": date,

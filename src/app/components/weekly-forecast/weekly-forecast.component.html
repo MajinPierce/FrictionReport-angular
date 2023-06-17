@@ -8,9 +8,9 @@
       <div class="forecast__day">
         <p class="forecast__day_item">{{day.dt*1000 | date:'ccc'}}</p>
         <mat-icon [svgIcon]="day.weather[0].icon | icon"/>
-        <p class="forecast__day_item">{{day.temp.min | number: '1.0-0'}}&#730;</p>
+        <p class="forecast__day_item">{{day.temperature.min | number: '1.0-0'}}&#730;</p>
         <hr class="forecast__day_item">
-        <p class="forecast__day_item">{{day.temp.max | number: '1.0-0'}}&#730;</p>
+        <p class="forecast__day_item">{{day.temperature.max | number: '1.0-0'}}&#730;</p>
       </div>
     </ng-container>
   </div>

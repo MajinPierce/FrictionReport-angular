@@ -20,12 +20,13 @@ export class DashboardService {
   }
 
   calculateDailySendex(day: any): number {
-    let sendex = Math.round(2 * day.dew_point + day.humidity - day.temp.min);
+    let sendex = Math.round(2 * day.dewPoint + day.humidity - day.temperature.min);
     return sendex;
   }
 
   calculateHourlySendex(hour: any): number {
-    let sendex = Math.round(2 * hour.dew_point + hour.humidity - hour.temp);
+    console.log("hour: "+ hour);
+    let sendex = Math.round(2 * hour.dewPoint + hour.humidity - hour.temperature);
     return sendex;
   }
 }
