@@ -19,3 +19,11 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   box-sizing: border-box;
 }
+
+.mat-drawer-backdrop {
+  width: 100vw;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: #23283750;
+}

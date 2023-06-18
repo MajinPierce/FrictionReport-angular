@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 import { ClimbingArea } from 'src/app/models/climbing-area.model';
 import { ApiService } from 'src/app/services/api.service';
+import { MatDrawerContent, MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'friction-sidebar',
@@ -11,12 +12,26 @@ import { ApiService } from 'src/app/services/api.service';
 export class SidebarComponent implements OnInit{
 
   opened: boolean = true;
+  mode: MatDrawerMode = "side";
   climbingAreas: ClimbingArea[] = [];
   states: Array<string> = new Array();
 
-  constructor(private apiService: ApiService){}
+  constructor(private apiService: ApiService, private breakpointObserver: BreakpointObserver){}
 
   ngOnInit(): void {
+    this.breakpointObserver
+      .observe(['(max-width: 710px)'])
+      .subscribe((state: BreakpointState) => {
+        console.log(state);
+        if (state.matches) {
+          this.opened = false;
+          this.mode = 'over';
+        } else {
+          this.mode = 'side';
+          this.opened = true;
+        }
+        console.log(this.mode);
+      });
     this.apiService.getAreasInit().subscribe(data =>{
       this.climbingAreas = data.sort((a: ClimbingArea ,b: ClimbingArea) => a.name.localeCompare(b.name));
       let set = new Set<string>;
