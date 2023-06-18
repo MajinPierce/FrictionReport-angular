@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ClimbingArea } from 'src/app/models/climbing-area.model';
-import { ClimbingAreaService } from 'src/app/services/climbing-area.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'friction-sidebar',
@@ -12,13 +12,19 @@ export class SidebarComponent implements OnInit{
 
   opened: boolean = true;
   climbingAreas: ClimbingArea[] = [];
+  states: Array<string> = new Array();
 
-  constructor(public climbingAreaService: ClimbingAreaService){}
+  constructor(private apiService: ApiService){}
 
   ngOnInit(): void {
-    this.climbingAreaService.areasSubject$.subscribe(data =>{
-      this.climbingAreas = data.sort((a,b) => a.name.localeCompare(b.name));
-    })
+    this.apiService.getAreasInit().subscribe(data =>{
+      this.climbingAreas = data.sort((a: ClimbingArea ,b: ClimbingArea) => a.name.localeCompare(b.name));
+      let set = new Set<string>;
+      this.climbingAreas.forEach(area => {
+        set.add(area.state);
+      });
+      this.states = Array.from(set).sort();
+    });
   }
 
   areaByName(index: number, area: ClimbingArea){

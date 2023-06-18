@@ -4,76 +4,22 @@
       <h2>Friction Report</h2>
     </div>
     <mat-accordion multi>
-      <mat-expansion-panel class="sidenav__panel">
-        <mat-expansion-panel-header class="sidenav__header">
-          <mat-panel-title class="sidenav__header_text">
-            Tennessee
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <a routerLink="{{area.apiName}}" routerLinkActive="active" class="sidenav__link">
-            <div class="sidenav__subpanel" *ngIf="area.state==='TN'">
-              <p class="sidenav__subpanel_text">{{area.name}}</p>
-            </div>
-          </a>
-        </ng-container>
-      </mat-expansion-panel>
-      <mat-expansion-panel class="sidenav__panel">
-        <mat-expansion-panel-header class="sidenav__header">
-          <mat-panel-title class="sidenav__header_text">
-            Alabama
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <a routerLink="{{area.apiName}}" routerLinkActive="active" class="sidenav__link">
-            <div class="sidenav__subpanel" *ngIf="area.state==='AL'">
-              <p class="sidenav__subpanel_text">{{area.name}}</p>
-            </div>
-          </a>
-        </ng-container>
-      </mat-expansion-panel>
-      <mat-expansion-panel class="sidenav__panel">
-        <mat-expansion-panel-header class="sidenav__header">
-          <mat-panel-title class="sidenav__header_text">
-            Georgia
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <a routerLink="{{area.apiName}}" routerLinkActive="active" class="sidenav__link">
-            <div class="sidenav__subpanel" *ngIf="area.state==='GA'">
-              <p class="sidenav__subpanel_text">{{area.name}}</p>
-            </div>
-          </a>
-        </ng-container>
-      </mat-expansion-panel>
-      <mat-expansion-panel class="sidenav__panel">
-        <mat-expansion-panel-header class="sidenav__header">
-          <mat-panel-title class="sidenav__header_text">
-            Kentucky
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <a routerLink="{{area.apiName}}" routerLinkActive="active" class="sidenav__link">
-            <div class="sidenav__subpanel" *ngIf="area.state==='KY'">
-              <p class="sidenav__subpanel_text">{{area.name}}</p>
-            </div>
-          </a>
-        </ng-container>
-      </mat-expansion-panel>
-      <mat-expansion-panel class="sidenav__panel">
-        <mat-expansion-panel-header class="sidenav__header">
-          <mat-panel-title class="sidenav__header_text">
-            North Carolina
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-          <a routerLink="{{area.apiName}}" routerLinkActive="active" class="sidenav__link">
-            <div class="sidenav__subpanel" *ngIf="area.state==='NC'">
-              <p class="sidenav__subpanel_text">{{area.name}}</p>
-            </div>
-          </a>
-        </ng-container>
-      </mat-expansion-panel>
+      <ng-container *ngFor="let state of states">
+        <mat-expansion-panel class="sidenav__panel">
+          <mat-expansion-panel-header class="sidenav__header">
+            <mat-panel-title class="sidenav__header_text">
+              {{state}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
+            <a routerLink="{{area.name}}" routerLinkActive="active" class="sidenav__link">
+              <div class="sidenav__subpanel" *ngIf="area.state===state">
+                <p class="sidenav__subpanel_text">{{area.fullName}}</p>
+              </div>
+            </a>
+          </ng-container>
+        </mat-expansion-panel>
+      </ng-container>
     </mat-accordion>
   </mat-drawer>
 </mat-drawer-container>
