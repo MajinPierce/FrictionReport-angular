@@ -21,6 +21,11 @@ export class ApiService {
     .pipe(retry(1), catchError(this.handleError));
   }
 
+  getAreasInit(): Observable<any> {
+    return this.http.get(this.apiUrl + "init")
+    .pipe(retry(1), catchError(this.handleError));
+  }
+
   handleError(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

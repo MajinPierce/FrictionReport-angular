@@ -1,5 +1,5 @@
 export interface ClimbingArea{
   name: string,
-  apiName: string,
+  fullName: string,
   state: string
 }
