@@ -13,6 +13,7 @@ export class SidebarComponent implements OnInit{
 
   opened: boolean = true;
   mode: MatDrawerMode = "side";
+  hasBackdrop: boolean = false;
   climbingAreas: ClimbingArea[] = [];
   states: Array<string> = new Array();
 
@@ -26,9 +27,11 @@ export class SidebarComponent implements OnInit{
         if (state.matches) {
           this.opened = false;
           this.mode = 'over';
+          this.hasBackdrop = true;
         } else {
           this.mode = 'side';
           this.opened = true;
+          this.hasBackdrop = false;
         }
         console.log(this.mode);
       });

@@ -3,8 +3,8 @@
     <mat-icon svgIcon="menu"/>
   </div>
 </ng-container>
-<mat-sidenav-container class="sidenav" [hasBackdrop]="true">
-  <mat-sidenav mode='over' [opened]="opened" class="sidenav__content">
+<mat-sidenav-container class="sidenav" [hasBackdrop]="hasBackdrop">
+  <mat-sidenav [mode]="mode" [opened]="opened" class="sidenav__content">
     <div class="sidenav__title">
       <h2>Friction Report</h2>
     </div>
@@ -17,7 +17,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-            <a routerLink="{{area.name}}" routerLinkActive="active" class="sidenav__link">
+            <a routerLink="{{area.name}}" routerLinkActive="active" class="sidenav__link" (click)="opened=!opened">
               <div class="sidenav__subpanel" *ngIf="area.state===state">
                 <p class="sidenav__subpanel_text">{{area.fullName}}</p>
               </div>
