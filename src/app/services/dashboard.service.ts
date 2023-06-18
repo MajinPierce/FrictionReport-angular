@@ -25,7 +25,6 @@ export class DashboardService {
   }
 
   calculateHourlySendex(hour: any): number {
-    console.log("hour: "+ hour);
     let sendex = Math.round(2 * hour.dewPoint + hour.humidity - hour.temperature);
     return sendex;
   }

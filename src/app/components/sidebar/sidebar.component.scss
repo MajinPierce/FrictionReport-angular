@@ -1,17 +1,32 @@
 @import "../../scss/variables";
 
-mat-drawer-container {
- flex: 1 1 auto;
+mat-sidenav-container {
+  flex: 1 1 auto;
+  overflow: visible;
+  width: fit-content;
 }
 
-mat-drawer{
+mat-sidenav{
   width: 15vw;
   min-width: 200px;
   height: 100%;
+
+  @media (max-width: 710px){
+    width: 70vw;
+    position: fixed;
+  }
 }
 
 .sidenav {
   height: 100%;
+
+  &__button {
+    position: fixed;
+    z-index: 10;
+    color: $color-text-light;
+    padding: .5rem;
+    transform: scale(1.1);
+  }
 
   &__content {
     background-color: $color-bg-darker;
@@ -22,7 +37,6 @@ mat-drawer{
     display: flex;
     justify-content: center;
   }
-
 
   &__panel {
     background-color: $color-bg-darker;

@@ -11,14 +11,21 @@
   align-items: center;
   color: $color-text-light;
 
+  @media (max-width: 710px){
+    width: 100vw;
+  }
+
   &__title {
     display: flex;
     width: 90%;
     align-items: center;
     justify-content: flex-start;
     padding-bottom: max(4vh, 2rem);
-
     height: fit-content;
+
+    @media (max-width: 710px){
+      justify-content: center;
+    }
 
     &_link {
       display: flex;
@@ -31,6 +38,10 @@
       padding-right: 1rem;
       margin: 0;
       font-size: 4rem;
+
+      @media (max-width: 710px){
+        font-size: 3rem;
+      }
     }
   }
 
