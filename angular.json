@@ -32,7 +32,8 @@
             "styles": [
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss",
-              "src/app/scss/chart-theme.scss"
+              "src/app/scss/chart-theme.scss",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": []
           },
