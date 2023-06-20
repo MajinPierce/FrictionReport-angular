@@ -9,6 +9,15 @@
       <h2>Friction Report</h2>
     </div>
     <mat-accordion multi>
+      <mat-expansion-panel class="sidenav__panel" disabled="true">
+        <mat-expansion-panel-header class="sidenav__header ">
+          <a routerLink="map" routerLinkActive="active" class="sidenav__link">
+            <mat-panel-title class="sidenav__header_text">
+              Map
+            </mat-panel-title>
+          </a>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
       <ng-container *ngFor="let state of states">
         <mat-expansion-panel class="sidenav__panel">
           <mat-expansion-panel-header class="sidenav__header">
@@ -17,7 +26,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <ng-container *ngFor="let area of climbingAreas; index as i; trackBy:areaByName">
-            <a routerLink="{{area.name}}" routerLinkActive="active" class="sidenav__link" (click)="opened=!opened">
+            <a routerLink="{{area.name}}" routerLinkActive="active" class="sidenav__link">
               <div class="sidenav__subpanel" *ngIf="area.state===state">
                 <p class="sidenav__subpanel_text">{{area.fullName}}</p>
               </div>
