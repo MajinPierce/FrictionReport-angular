@@ -1,2 +1,5 @@
-<div class="map" leaflet [leafletOptions]="options" [leafletLayers]="areaLayer">
-</div>
+<div class="map"
+ leaflet [leafletOptions]="options"
+ [leafletLayers]="areaLayer"
+ (leafletMapReady)="log($event)"
+ ></div>
