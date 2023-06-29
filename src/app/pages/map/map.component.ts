@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { circle, latLng, marker, tileLayer } from 'leaflet';
+import { circle, latLng, control, tileLayer } from 'leaflet';
 import { MapArea } from 'src/app/models/map-area.model';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -19,7 +19,8 @@ export class MapComponent implements OnInit{
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' })
     ],
     zoom: 8,
-    center: latLng(35.2356, -85.2265)
+    center: latLng(35.2356, -85.2265),
+    zoomControl: false
   };
 
   areaLayer: any[] = [];
@@ -39,13 +40,17 @@ export class MapComponent implements OnInit{
           circle([area.latitude, area.longitude], {radius: 3000})
           .bindPopup(popup)
         );
+      })
     })
-  })
-}
+  }
 
   calculateSendex(area: MapArea): number {
     let sendex = Math.round(2 * area.current.dewPoint + area.current.humidity - area.current.temperature);
     return sendex;
+  }
+
+  onMapReady(map: L.Map){
+    map.addControl(control.zoom({position: 'topright'}));
   }
 
 }
