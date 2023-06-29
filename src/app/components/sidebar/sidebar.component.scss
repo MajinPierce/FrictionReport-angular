@@ -19,11 +19,12 @@ mat-sidenav{
 
 .sidenav {
   height: 100%;
+  z-index: 900;
 
   &__button {
     position: fixed;
-    z-index: 10;
-    color: $color-text-light;
+    color: $color-accent-light;
+    z-index: 999;
     padding: .5rem;
     transform: scale(1.1);
   }

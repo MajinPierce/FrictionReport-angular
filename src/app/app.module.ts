@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { IconPipe } from './pipes/icon.pipe';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { IconPipe } from './pipes/icon.pipe';
     MatExpansionModule,
     HttpClientModule,
     MatIconModule,
-    NgxChartsModule
+    NgxChartsModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

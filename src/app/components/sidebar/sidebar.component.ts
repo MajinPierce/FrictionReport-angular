@@ -23,7 +23,6 @@ export class SidebarComponent implements OnInit{
     this.breakpointObserver
       .observe(['(max-width: 710px)'])
       .subscribe((state: BreakpointState) => {
-        console.log(state);
         if (state.matches) {
           this.opened = false;
           this.mode = 'over';
@@ -33,7 +32,6 @@ export class SidebarComponent implements OnInit{
           this.opened = true;
           this.hasBackdrop = false;
         }
-        console.log(this.mode);
       });
     this.apiService.getAreasInit().subscribe(data =>{
       this.climbingAreas = data.sort((a: ClimbingArea ,b: ClimbingArea) => a.name.localeCompare(b.name));

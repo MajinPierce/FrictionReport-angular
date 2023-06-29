@@ -6,7 +6,8 @@ import { Observable, catchError, retry, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  apiUrl: string = "http://192.168.50.143:8080/api/";
+  apiUrl: string = "http://localhost:8080/api/";
+  siteUrl: string = "http://localhost:4200/";
 
   constructor(private http: HttpClient) {}
 
@@ -23,6 +24,11 @@ export class ApiService {
 
   getAreasInit(): Observable<any> {
     return this.http.get(this.apiUrl + "init")
+    .pipe(retry(1), catchError(this.handleError));
+  }
+
+  getMapData(): Observable<any> {
+    return this.http.get(this.apiUrl + "map")
     .pipe(retry(1), catchError(this.handleError));
   }
 

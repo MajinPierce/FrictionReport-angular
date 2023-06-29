@@ -2,8 +2,6 @@ export interface AreaData {
   name: string,
   fullName: string,
   mountainProjectUrl: string,
-  latitude: string,
-  longitude: string,
   state: string,
   current: {
       dt: number,
