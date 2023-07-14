@@ -3,6 +3,7 @@
 mat-sidenav-container {
   flex: 1 1 auto;
   overflow: visible;
+  width: -moz-fit-content;
   width: fit-content;
 }
 

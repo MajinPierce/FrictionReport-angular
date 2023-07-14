@@ -1,15 +1,19 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  apiUrl: string = "http://localhost:8080/api/";
-  siteUrl: string = "http://localhost:4200/";
+  apiUrl: string;
+  siteUrl: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.apiUrl = environment.apiUrl;
+    this.siteUrl = environment.siteUrl;
+  }
 
   httpOptions = {
     headers: new HttpHeaders({
