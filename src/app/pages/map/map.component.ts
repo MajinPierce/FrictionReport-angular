@@ -37,7 +37,7 @@ export class MapComponent implements OnInit{
           closeOnClick: false
         }).setContent(`<a href="${this.apiService.siteUrl}${area.name}">${area.fullName}: ${area.sendex.toString()}</a>`)
         this.areaLayer.push(
-          circle([area.latitude, area.longitude], {radius: 3000})
+          circle([area.lat, area.lon], {radius: 3000})
           .bindPopup(popup)
         );
       })

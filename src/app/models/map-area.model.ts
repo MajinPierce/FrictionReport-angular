@@ -1,8 +1,8 @@
 export interface MapArea{
   name: string,
   fullName: string,
-  latitude: number,
-  longitude: number,
+  lat: number,
+  lon: number,
   current: {
     dt: number,
     humidity: number,
