@@ -1,4 +1,4 @@
-# FrictionReport [![AWS S3 Deployment](https://github.com/MajinPierce/FrictionReport-angular/actions/workflows/aws.yml/badge.svg)](https://github.com/MajinPierce/FrictionReport-angular/actions/workflows/aws.yml)
+# Friction Report [![AWS S3 Deployment](https://github.com/MajinPierce/FrictionReport-angular/actions/workflows/aws.yml/badge.svg)](https://github.com/MajinPierce/FrictionReport-angular/actions/workflows/aws.yml)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1. It also uses node 18.16.0 LTS.
 
