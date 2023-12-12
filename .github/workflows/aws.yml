@@ -55,7 +55,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: S3 Sync
-      run: aws s3 sync dist/github-angular-demo/ s3://${{ secrets.S3_BUCKET }}
+      run: aws s3 sync ${{env.DIST_PATH}} s3://${{ secrets.S3_BUCKET }}
 
     - name: Cloudfront Invalidation
       run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
