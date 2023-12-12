@@ -1,0 +1,57 @@
+name: Deploy Angular App to S3 and CloudFront
+
+on:
+  push:
+    branches: [ "prod" ]
+
+env:
+  AWS_REGION: ${{vars.AWS_REGION}}                     # set this to your preferred AWS region, e.g. us-west-1
+  DIST_PATH: dist/friction-report/
+
+jobs:
+  build:
+    name: Build Angular App
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install packages and dependencies
+      run: npm install -g @angular/cli && npm install
+
+    - name: Run build
+      run: ng build
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: artifacts
+        path: ${{env.DIST_PATH}}
+
+  deploy:
+    name: Development to S3 and CloudFront
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - uses: actions/download-artifact@v3
+      with:
+        name: artifacts
+        path: ${{env.DIST_PATH}}
+
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v1.7.0
+      with:
+        role-to-assume: ${{secrets.IAM_ROLE_TO_ASSUME}}     #change to reflect your IAM role’s ARN
+        role-session-name: github-actions
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: S3 Sync
+      run: aws s3 sync dist/github-angular-demo/ s3://${{ secrets.S3_BUCKET }}
+
+    - name: Cloudfront Invalidation
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
