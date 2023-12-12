@@ -8,6 +8,10 @@ env:
   AWS_REGION: ${{vars.AWS_REGION}}                     # set this to your preferred AWS region, e.g. us-west-1
   DIST_PATH: dist/friction-report/
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     name: Build Angular App
