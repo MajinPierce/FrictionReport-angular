@@ -1,4 +1,4 @@
-name: Deploy Angular App to S3 and CloudFront
+name: AWS S3 Deployment
 
 on:
   push:
