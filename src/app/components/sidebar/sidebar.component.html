@@ -9,15 +9,15 @@
       <h2>Friction Report</h2>
     </div>
     <mat-accordion multi>
-      <mat-expansion-panel class="sidenav__panel" disabled="true">
-        <mat-expansion-panel-header class="sidenav__header ">
-          <a routerLink="map" routerLinkActive="active" class="sidenav__link">
-            <mat-panel-title class="sidenav__header_text">
-              Map
-            </mat-panel-title>
-          </a>
-        </mat-expansion-panel-header>
-      </mat-expansion-panel>
+      <a routerLink="map" routerLinkActive="active" class="sidenav__link">
+        <mat-expansion-panel class="sidenav__panel" id="map-link" disabled="true">
+          <mat-expansion-panel-header class="sidenav__header ">
+              <mat-panel-title class="sidenav__header_text">
+                Map
+              </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </a>
       <ng-container *ngFor="let state of states">
         <mat-expansion-panel class="sidenav__panel">
           <mat-expansion-panel-header class="sidenav__header">

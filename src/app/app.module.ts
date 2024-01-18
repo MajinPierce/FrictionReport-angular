@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { IconPipe } from './pipes/icon.pipe';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { SendexInfoComponent, SendexInfoDialogComponent } from './components/sendex-info/sendex-info.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     WeeklyGraphComponent,
     HourlyGraphComponent,
     WeeklyForecastComponent,
-    IconPipe
+    IconPipe,
+    SendexInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     HttpClientModule,
     MatIconModule,
     NgxChartsModule,
-    LeafletModule
+    LeafletModule,
+    SendexInfoDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

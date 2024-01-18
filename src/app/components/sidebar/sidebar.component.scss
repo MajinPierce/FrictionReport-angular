@@ -46,6 +46,7 @@ mat-sidenav{
     * {
       color: $color-text-light;
     }
+
   }
 
   &__header{
@@ -75,5 +76,11 @@ mat-sidenav{
     .sidenav__subpanel{
       background: $color-bg-med;
     }
+  }
+}
+
+#map-link {
+  :hover{
+    background: $color-bg-dark;
   }
 }
