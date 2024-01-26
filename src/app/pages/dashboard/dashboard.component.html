@@ -2,7 +2,7 @@
   <ng-container  *ngIf="area">
     <div class="dashboard__title">
       <h1 class="dashboard__title_text">{{area.fullName}}</h1>
-      <a href="{{area.mountainProjectUrl}}" target="_blank" class="dashboard__title_link">
+      <a href="{{area.mountainProjectUrl}}" rel="noopener noreferrer" aria-label="Mountain Project" target="_blank" class="dashboard__title_link">
         <mat-icon svgIcon="open_in_new"/>
       </a>
     </div>

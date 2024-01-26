@@ -5,9 +5,11 @@
 </ng-container>
 <mat-sidenav-container class="sidenav" [hasBackdrop]="hasBackdrop">
   <mat-sidenav [mode]="mode" [opened]="opened" class="sidenav__content">
-    <div class="sidenav__title">
-      <h2>Friction Report</h2>
-    </div>
+    <a routerLink="StoneFort" routerLinkActive="active" class="sidenav__homepage">
+      <div class="sidenav__title">
+        <h2>Friction Report</h2>
+      </div>
+    </a>
     <mat-accordion multi>
       <a routerLink="map" routerLinkActive="active" class="sidenav__link">
         <mat-expansion-panel class="sidenav__panel" id="map-link" disabled="true">
@@ -35,6 +37,15 @@
         </mat-expansion-panel>
       </ng-container>
     </mat-accordion>
+    <div class="sidenav__footer">
+      <a href="https://github.com/MajinPierce/FrictionReport-angular" rel="noopener noreferrer" aria-label="Friction Report GitHub repo" target="_blank" class="sidenav__footer_github">
+        <mat-icon inline=true svgIcon="github"/>
+      </a>
+      <p class="sidenav__footer_separator"> | </p>
+      <a href="mailto:pierce@friction.report" class="sidenav__footer_email">
+        pierce@friction.report
+      </a>
+    </div>
   </mat-sidenav>
 </mat-sidenav-container>
 
