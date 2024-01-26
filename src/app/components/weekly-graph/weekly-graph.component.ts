@@ -85,10 +85,9 @@ export class WeeklyGraphComponent implements OnInit {
     this.weeklyValues.forEach((ngxData) => {
       ngxData.series.length = 0;
     });
-    let i = 0;
-    this.area.daily.every((day) => {
-      if(i < this.timeframe){
-        let date = new Date(day.dt * 1000).toLocaleDateString('en-US', {month: "numeric", day: "numeric"});
+    for(let i=0; i < this.timeframe; i++){
+      let day = this.area.daily[i];
+      let date = new Date(day.dt * 1000).toLocaleDateString('en-US', {month: "numeric", day: "numeric"});
         this.weeklyValues[this.minTempIndex].series.push({
           "name": date,
           "value": day.temperature.min
@@ -113,11 +112,6 @@ export class WeeklyGraphComponent implements OnInit {
           "name": date,
           "value": this.dashboardService.calculateDailySendex(day)
         });
-      } else {
-        return false;
-      }
-      i++;
-      return true;
-    })
+    }
   }
 }
