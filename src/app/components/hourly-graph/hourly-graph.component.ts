@@ -44,10 +44,6 @@ export class HourlyGraphComponent implements OnInit {
       if(data){
         this.area = data;
         this.setHourlySendexValues();
-        let temp = 0;
-        let temp2 = 5;
-        let temp3 = 8;
-        temp = 3 * temp2 + temp3;
       }
     });
   }
@@ -55,18 +51,11 @@ export class HourlyGraphComponent implements OnInit {
   setHourlySendexValues(): void {
     this.hourlySendexValues = this.reset.slice();
     this.hourlySendexValues[0].series.length = 0;
-      let i = 0;
-      this.area.hourly.every((hour) => {
-        if(i < this.timeframe){
-          this.hourlySendexValues[0].series.push({
-            "name": new Date(hour.dt * 1000).toLocaleTimeString([],{hour: "2-digit"}),
-            "value":  this.dashboardService.calculateHourlySendex(hour)
-          });
-        } else {
-          return false;
-        }
-        i++;
-        return true;
-      })
+    for(let i=0; i < this.timeframe; i++){
+      this.hourlySendexValues[0].series.push({
+        "name": new Date(this.area.hourly[i].dt * 1000).toLocaleTimeString([],{hour: "numeric"}),
+        "value":  this.dashboardService.calculateHourlySendex(this.area.hourly[i])
+        });
+    }
   }
 }
