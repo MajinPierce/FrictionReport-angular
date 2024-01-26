@@ -57,6 +57,9 @@
     &_title {
       padding-left: 2.4%;
       padding-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
       @media (max-width: 1180px){
         display: flex;

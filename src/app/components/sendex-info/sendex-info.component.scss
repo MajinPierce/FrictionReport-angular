@@ -1,0 +1,10 @@
+@import "../../scss/_variables";
+
+.info-icon {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 1rem;
+  color: $color-accent-light;
+  cursor: pointer;
+}

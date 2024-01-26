@@ -19,6 +19,7 @@ export class SendexInfoComponent {
 @Component({
   selector: 'app-sendex-info-dialog',
   templateUrl: 'sendex-info-dialog.component.html',
+  styleUrls: ['./sendex-info-dialog.component.scss'],
   standalone: true,
   imports: [MatDialogModule],
 })

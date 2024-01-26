@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+
+.info-dialog {
+  background: $color-bg-lighter;
+  padding: 2rem;
+  color: $color-text-light;
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__content {
+    text-indent: 2rem;
+    margin: 1rem;
+
+    &_formula {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+
+      &_text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-text-lighter;
+        text-indent: 0;
+        flex-wrap: wrap;
+
+        span {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.variable-color {
+  color: $color-variable;
+}
+
+.constant-color {
+  color: $color-constant;
+}
