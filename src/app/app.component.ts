@@ -25,6 +25,10 @@ export class AppComponent {
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/help_300.svg")
     );
     this.matIconRegistry.addSvgIcon(
+      "info",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/info_300.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
       "sun",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/weather-icons/sun_300.svg")
     );

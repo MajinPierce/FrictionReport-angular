@@ -44,6 +44,10 @@ export class HourlyGraphComponent implements OnInit {
       if(data){
         this.area = data;
         this.setHourlySendexValues();
+        let temp = 0;
+        let temp2 = 5;
+        let temp3 = 8;
+        temp = 3 * temp2 + temp3;
       }
     });
   }
