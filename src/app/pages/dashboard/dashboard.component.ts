@@ -11,7 +11,6 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 export class DashboardComponent implements OnInit{
 
   area!: AreaData;
-  test: string = "empty";
 
   constructor(
     private dashboardService: DashboardService,

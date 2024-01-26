@@ -64,6 +64,10 @@ export class AppComponent {
       "foggy",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/weather-icons/foggy_300.svg")
     );
+    this.matIconRegistry.addSvgIcon(
+      "github",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/github-mark.svg")
+    );
   }
 
 }
